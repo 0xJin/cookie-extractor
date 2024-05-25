@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Extractor</title>
+</head>
+<body>
+    <h1>Cookie Extractor</h1>
+    <script>
+        fetch('http://localhost:3000/get-cookies')
+            .then(response => response.json())
+            .then(data => {
+                alert('Cookies: ' + JSON.stringify(data));
+                console.log('Cookies:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Error fetching cookies: ' + error);
+            });
+    </script>
+</body>
+</html>
